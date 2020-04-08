@@ -1,0 +1,16 @@
+{
+  "name": "getall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "geall.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio-httpcli": "^0.7.4",
+    "request": "^2.88.2",
+    "url": "^0.11.0"
+  }
+}
