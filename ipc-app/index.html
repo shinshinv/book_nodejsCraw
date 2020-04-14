@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IPC Test</title>
+<script>
+var electron = require('electron');
+var ipc = electron.ipcRenderer;
+var info;
+
+window.onload = function() {
+    info = document.getElementById('info');
+    testSync();
+    testASync();
+};
+
+function testSync() {
+    var res = ipc.sendSync('mul-sync', {a:30, b:2});
+    msg("sync result = " + res);
+}
+
+function testASync() {
+    ipc.send('mul-async', {a:60, b:2});
+    ipc.on('mul-async-reply', function(evt, arg) {
+        msg("async result = " + arg)
+    });
+}
+
+function msg(msg) {
+    info.innerHTML += msg + "<br>";
+}
+</script>
+</head>
+<body>
+    <h1>IPC TEST</h1>
+    <p id="info"></p>
+</body>
+</html>
