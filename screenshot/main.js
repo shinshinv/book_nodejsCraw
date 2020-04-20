@@ -1,4 +1,7 @@
-var TARGET_URL = "https://atom.io";
+var DELAY_TIME = 1000 * 1;
+
+var WORD = "말티즈"
+var TARGET_URL = "https://www.google.co.kr/search" + "?source=lnms&tbm=isch&q=" + encodeURIComponent(WORD);
 
 var electron = require('electron');
 var app = electron.app;
@@ -13,7 +16,11 @@ app.on('ready', function() {
 });
 
 function captureFunc() {
-    win.capturePage(function(img) {
-        fs.writeFileSync('screenshot.png', img.toPng);
-    });
+    setTimeout(function() {
+        var fname = "mal-" + (new Date()).getTime() + ".png";
+        win.capturePage(function(img) {
+            fs.writeFileSync( fname, img.toPng);
+            app.quit();
+        });
+    }, DELAY_TIME);
 }
