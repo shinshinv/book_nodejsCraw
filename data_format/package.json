@@ -1,0 +1,16 @@
+{
+  "name": "data_format",
+  "version": "1.0.0",
+  "description": "",
+  "main": "csv-read.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "comma-separated-values": "^3.6.4",
+    "iconv": "^2.3.5",
+    "jschardet": "^2.1.1"
+  }
+}
