@@ -1,0 +1,14 @@
+{
+  "name": "make_excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "officegen-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "officegen": "^0.6.4"
+  }
+}
